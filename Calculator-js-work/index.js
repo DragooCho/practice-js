@@ -1,57 +1,73 @@
-// const btn = document.querySelector(".Btn-click");
+const plus = document.querySelector("#plus");
+const minus = document.querySelector("#minus");
+const multiply = document.querySelector("#multiply");
+const division = document.querySelector("#division");
+const resetBtn = document.querySelector(".resetButton");
+const resultBtn = document.querySelector(".resultBtn-click");
+const calProcess = document.querySelector(".CalProcess");
+const numberInput = document.querySelector("#CalculatorInput");
+const CalResult = document.querySelector("#CalResult");
 
-// btn.addEventListener("click", () => {
-//   const wordTag = document.querySelector(".wordStart");
-//   const word = wordTag.textContent;
-//   const inputTag = document.querySelector("#FirstInput");
-//   const resultTag = document.querySelector("#result");
-//   const input = inputTag.value;
-//   const lastIndex = word.length - 1;
-//   //word.length - 1 는 단어의 끝글자를 가져옴
-//   const w = word[lastIndex];
-//   const i = input[0];
-//   if (w === i) {
-//     wordTag.textContent = input;
-//     resultTag.textContent = "정답";
-//     inputTag.value = null;
-//     inputTag.focus();
-//   } else {
-//     resultTag.textContent = "땡";
-//     inputTag.value = null;
-//     inputTag.focus();
-//     // focus()는 입력창에 커서를 넣고 대기하라는것
-//   }
-// });
+let TEMP;
+let operator;
 
-const btn = document.querySelector(".Btn-click");
-
-function clickWordStart() {
-  const wordTag = document.querySelector(".wordStart");
-  const word = wordTag.textContent;
-  const inputTag = document.querySelector("#FirstInput");
-  const resultTag = document.querySelector("#result");
-  const input = inputTag.value;
-  const lastIndex = word.length - 1;
-  //word.length - 1 는 단어의 끝글자를 가져옴
-  const w = word[lastIndex];
-  const i = input[0];
-  if (w === i) {
-    wordTag.textContent = input;
-    resultTag.textContent = "정답";
-    inputTag.value = null;
-    inputTag.focus();
-  } else {
-    resultTag.textContent = "땡";
-    inputTag.value = null;
-    inputTag.focus();
-    // focus()는 입력창에 커서를 넣고 대기하라는것
+plus.addEventListener("click", () => {
+  if (numberInput.value) {
+    TEMP = Number(numberInput.value);
+    operator = "+";
+    numberInput.value = null;
   }
-}
+});
 
-function init() {
-  btn.addEventListener("click", clickWordStart);
-}
+minus.addEventListener("click", () => {
+  if (numberInput.value) {
+    TEMP = Number(numberInput.value);
+    operator = "-";
+    numberInput.value = null;
+  }
+});
 
-init();
+multiply.addEventListener("click", () => {
+  if (numberInput.value) {
+    TEMP = Number(numberInput.value);
+    operator = "*";
+    numberInput.value = null;
+  }
+});
 
-//기존 함수형 코드
+division.addEventListener("click", () => {
+  if (numberInput.value) {
+    TEMP = Number(numberInput.value);
+    operator = "/";
+    numberInput.value = null;
+  }
+});
+
+resetBtn.addEventListener("click", () => {
+  numberInput.value = "";
+  CalResult.value = null;
+  TEMP = null;
+  operator = null;
+});
+
+resultBtn.addEventListener("click", () => {
+  console.log(TEMP, operator, numberInput.value);
+  if (operator) {
+    if (numberInput.value) {
+      if (operator === "+") {
+        CalResult.value = TEMP + Number(numberInput.value);
+      } else if (operator === "-") {
+        CalResult.value = TEMP - Number(numberInput.value);
+      } else if (operator === "*") {
+        CalResult.value = TEMP * Number(numberInput.value);
+      } else if (operator === "/") {
+        CalResult.value = TEMP / Number(numberInput.value);
+      }
+    }
+  } else {
+    if (numberInput.value) {
+      CalResult.value = TEMP;
+    }
+  }
+  numberInput.value = CalResult.value;
+});

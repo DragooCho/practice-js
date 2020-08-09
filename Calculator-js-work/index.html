@@ -8,18 +8,29 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>wordrelay</title>
+    <title>Calculator</title>
   </head>
   <body>
-    <section class="wordrelay-box">
-      <div class="wordStart">제로초</div>
-      <span class="wordrelayLine">
-        <div class="FirstInput inputBox">
-          <input id="FirstInput" type="text" placeholder="단어를 작성하세요" />
+    <section class="Calculator-box">
+      <div class="CalProcess">계산과정이 여기에 표시됩니다.</div>
+      <span class="CalculatorLine">
+        <div class="Calculator inputBox">
+          <input
+            id="CalculatorInput"
+            type="number"
+            placeholder="숫자와 부호를 입력하시오"
+          />
         </div>
-        <button class="Btn-click">입력</button>
+        <button class="resetButton">c</button>
+        <button class="resultBtn-click">=</button>
       </span>
-      <span id="result">정답은?</span>
+      <span class="buttonLine">
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+        <button id="multiply">X</button>
+        <button id="division">/</button>
+      </span>
+      <input type="number" id="CalResult">계산결과가 여기에 표시됩니다.</input type="number">
     </section>
     <script src="index.js"></script>
   </body>

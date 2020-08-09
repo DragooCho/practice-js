@@ -12,7 +12,7 @@ body {
   align-items: center;
 }
 
-.wordrelay-box {
+.Calculator-box {
   display: flex;
   flex-direction: column;
   background-color: cornsilk;
@@ -21,7 +21,7 @@ body {
   border-radius: 40px;
 }
 
-.wordrelayLine {
+.CalculatorLine {
   display: flex;
   flex-direction: row;
 }
@@ -30,6 +30,16 @@ body {
   padding: 20px 50px 20px 0;
 }
 
-.Btn-click {
+button {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  font-size: 20px;
+}
+.resultBtn-click {
   cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
 }
