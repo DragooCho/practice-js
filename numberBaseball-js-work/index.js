@@ -28,8 +28,6 @@ const inputWindow = document.querySelector("#FirstInput");
 const Btn = document.querySelector(".Btn-click");
 const resultLine = document.querySelector("#result");
 
-// console.log(number1, number2, number3, number4);
-
 function randomNumberBox() {
   let number1 = Math.floor(Math.random() * 10);
   let number2 = Math.floor(Math.random() * 10);
@@ -43,11 +41,17 @@ function randomNumberBox() {
     return randomNumberBox();
   } else if (number4 === number1) {
     return randomNumberBox();
+  } else if (number3 === number1) {
+    return randomNumberBox();
+  } else if (number2 === number4) {
+    return randomNumberBox();
   } else {
-    resultLine.innerHTML = `${number1}${number2}${number3}${number4}`;
+    answerNumber = [number1, number2, number3, number4];
   }
 }
 
 randomNumberBox();
+
+// console.log(answerNumber[1]);
 
 // btn.addEventListener("click", () => {});
