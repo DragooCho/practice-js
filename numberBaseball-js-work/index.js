@@ -29,28 +29,32 @@ const Btn = document.querySelector(".Btn-click");
 const resultLine = document.querySelector("#result");
 
 function MakeRandomNumber() {
-  const number1 = Math.floor(Math.random() * 10),
-    number2 = Math.floor(Math.random() * 10),
-    number3 = Math.floor(Math.random() * 10),
-    number4 = Math.floor(Math.random() * 10);
+  const Anumber1 = Math.floor(Math.random() * 10),
+    Anumber2 = Math.floor(Math.random() * 10),
+    Anumber3 = Math.floor(Math.random() * 10),
+    Anumber4 = Math.floor(Math.random() * 10);
   if (
-    number1 === number2 ||
-    number2 === number3 ||
-    number3 === number4 ||
-    number4 === number1 ||
-    number3 === number1 ||
-    number2 === number4
+    Anumber1 === Anumber2 ||
+    Anumber2 === Anumber3 ||
+    Anumber3 === Anumber4 ||
+    Anumber4 === Anumber1 ||
+    Anumber3 === Anumber1 ||
+    Anumber2 === Anumber4
   ) {
     return MakeRandomNumber();
   } else {
-    answerNumber = [number1, number2, number3, number4];
+    answerNumber = [Anumber1, Anumber2, Anumber3, Anumber4];
   }
 }
 
 MakeRandomNumber();
-
-console.log(answerNumber);
-
 // btn.addEventListener("click", () => {
-
+//   TEMP = Number(inputWindow.value);
+//   console.log(TEMP);
 // });
+
+const inputNumber = answerNumber;
+const ANSWERNumber1 = inputNumber.toString()[0];
+const ANSWERNumber2 = inputNumber.toString()[2];
+const ANSWERNumber3 = inputNumber.toString()[4];
+const ANSWERNumber4 = inputNumber.toString()[6];
