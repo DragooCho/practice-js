@@ -10,7 +10,7 @@ while (a <= 8) {
   a += 1;
 }
 
-console.log(numbers);
+// console.log(numbers);
 
 let answer = [];
 
@@ -19,7 +19,7 @@ for (let n = 0; n <= 3; n += 1) {
   answer.push(numbers[index]);
   numbers.splice(index, 1);
 }
-
+// 3046  4316
 console.log(answer);
 
 let count = 0;
@@ -30,6 +30,22 @@ check.addEventListener("click", () => {
       logs.appendChild(document.createTextNode("HR"));
     } else {
       console.log("다르다");
+      let strike = 0;
+      let ball = 0;
+      for (const [aIndex, aNumber] of answer.entries()) {
+        for (const [iIndex, iString] of input.value.split("").entries()) {
+          if (aNumber === Number(iString)) {
+            if (aIndex === iIndex) {
+              strike += 1;
+            } else {
+              ball += 1;
+            }
+          }
+        }
+      }
+      logs.appendChild(
+        document.createTextNode(`${input.value} : ${strike}strike ${ball}ball`)
+      );
     }
   }
 });
