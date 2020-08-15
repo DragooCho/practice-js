@@ -3,12 +3,17 @@ const check = document.querySelector("#check");
 const logs = document.querySelector("#logs");
 
 let numbers = [];
-let a = -1;
+
+// let numbers = Array(10)
+//   .fill()
+//   .map((v, i) => i);
+
 // while (a <= 8) {
 //   const randomNumber = a + 1;
 //   numbers.push(randomNumber);
 //   a += 1;
 // }
+
 for (let n = 0; n <= 9; n += 1) {
   // 시작조건,반복이 멈추는 조건, 반복될때 추가되는 조건
   numbers.push(n);
