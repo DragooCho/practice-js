@@ -10,6 +10,8 @@ function handerButton() {
     .map((Airball, i) => i + 1);
   //매서드 체이닝
 
+  console.log(candidate);
+
   const shuffle = [];
   while (candidate.length > 0) {
     const random = Math.floor(Math.random() * candidate.length);
@@ -18,7 +20,7 @@ function handerButton() {
     shuffle.push(value);
   }
 
-  // console.log(shuffle);
+  console.log(shuffle);
   //
   const winBalls = shuffle.slice(0, 6).sort((p, c) => p - c);
   // sort()는 단순 숫자 순서가 아닌 사전순(07이 아닌 7을 나중으로 볼수가 있다).
