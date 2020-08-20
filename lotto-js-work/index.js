@@ -66,7 +66,11 @@ setTimeout(() => {
 
 const MessageTag = document.querySelector("#restartMessage");
 setTimeout(() => {
-  const bonusBall = document.createElement("div");
-  bonusBall.textContent = `다시 추첨할려면 세로고침 버튼을 누르세요.`;
-  MessageTag.appendChild(bonusBall);
-}, 8000);
+  const bonusMessage2 = document.createElement("div");
+  const bonusMessage1 = document.createElement("i");
+  bonusMessage1.className = "fas fa-redo-alt";
+  bonusMessage1.textContent = `버튼을 누르세요.`;
+  bonusMessage2.textContent = `다시 추첨할려면 `;
+  MessageTag.appendChild(bonusMessage1);
+  MessageTag.appendChild(bonusMessage2);
+}, 7500);
