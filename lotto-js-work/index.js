@@ -41,19 +41,6 @@ function colorize(number, tag) {
 
 const resultTag = document.querySelector("#result");
 
-// for (let i = 0; i < 6; i++) {
-//   setTimeout(() => {
-//     const ball = document.createElement("div");
-//     ball.className = "ball";
-//     //
-//     colorize(winBalls[i], ball);
-//     //만든 함수를 적용1.
-//     ball.textContent = winBalls[i];
-//     resultTag.appendChild(ball);
-//   }, 1000 * (i + 1));
-// }
-//
-
 winBalls.forEach((number, index) => {
   setTimeout(() => {
     const ball = document.createElement("div");
@@ -76,3 +63,10 @@ setTimeout(() => {
   bonusBall.textContent = bonus;
   bonusTag.appendChild(bonusBall);
 }, 7000);
+
+const MessageTag = document.querySelector("#restartMessage");
+setTimeout(() => {
+  const bonusBall = document.createElement("div");
+  bonusBall.textContent = `다시 추첨할려면 세로고침 버튼을 누르세요.`;
+  MessageTag.appendChild(bonusBall);
+}, 8000);
