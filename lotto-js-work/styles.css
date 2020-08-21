@@ -38,3 +38,16 @@ body {
   flex-direction: column-reverse;
   margin-top: 20px;
 }
+
+.startButton {
+  margin: 10px;
+}
+
+#inputExcluded,
+#inputExcluded2,
+#inputExcluded3,
+#inputExcluded4 {
+  margin: 10px;
+  width: 250px;
+  height: 30px;
+}

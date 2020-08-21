@@ -1,7 +1,7 @@
 const startButton = document.querySelector(".startButton");
 
 function handerButton() {
-  const excluded = document.querySelector("#inputExcluded1");
+  const excluded = document.querySelector("#inputExcluded");
   console.log(excluded.value);
 
   //
@@ -9,6 +9,15 @@ function handerButton() {
     .fill()
     .map((Airball, i) => i + 1);
   //매서드 체이닝
+
+  x = document.querySelector("#inputExcluded").value;
+  Arr = x.split(",");
+  for (i = 0; i < Arr.length; i++) Arr[i] = Arr[i] - 0;
+  for (i = 0; i < Arr.length; i++) {
+    for (j = 0; j < candidate.length; j++) {
+      if (candidate[j] == Arr[i]) candidate.splice(j, 1);
+    }
+  }
 
   console.log(candidate);
 
@@ -83,6 +92,8 @@ function handerButton() {
     MessageTag.appendChild(bonusMessage2);
   }, 7500);
 }
+
+const sclearButton = document.querySelector("clearButton");
 
 function init() {
   startButton.addEventListener("click", handerButton);
