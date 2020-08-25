@@ -1,16 +1,13 @@
 const startButton = document.querySelector(".startButton");
+const clearButton = document.querySelector(".clearButton");
 
 function handerButton() {
-  const excluded = document.querySelector("#inputExcluded");
-  console.log(excluded.value);
-
-  //
   const candidate = Array(45)
     .fill()
     .map((Airball, i) => i + 1);
   //매서드 체이닝
 
-  x = document.querySelector("#inputExcluded").value;
+  const x = document.querySelector("#inputExcluded").value;
   Arr = x.split(",");
   for (i = 0; i < Arr.length; i++) Arr[i] = Arr[i] - 0;
   for (i = 0; i < Arr.length; i++) {
@@ -19,7 +16,7 @@ function handerButton() {
     }
   }
 
-  console.log(candidate);
+  // console.log(candidate);
 
   const shuffle = [];
   while (candidate.length > 0) {
@@ -29,8 +26,13 @@ function handerButton() {
     shuffle.push(value);
   }
 
-  console.log(shuffle);
   //
+  const inc = document.querySelector("#inputIncluded").value;
+  incArr = inc.split(",");
+
+  for (z = 0; z < incArr.length; z++) {
+    if (shuffle.splice(z, 1, incArr[z]));
+  }
   const winBalls = shuffle.slice(0, 6).sort((p, c) => p - c);
   // sort()는 단순 숫자 순서가 아닌 사전순(07이 아닌 7을 나중으로 볼수가 있다).
   const bonus = shuffle[6];
@@ -93,7 +95,10 @@ function handerButton() {
   }, 7500);
 }
 
-const sclearButton = document.querySelector("clearButton");
+// CLEARButton(() => {
+//   null = bonusMessage1.textContent;
+//   null = bonusMessage2.textContent;
+// }
 
 function init() {
   startButton.addEventListener("click", handerButton);

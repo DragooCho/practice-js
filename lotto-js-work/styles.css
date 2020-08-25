@@ -43,11 +43,14 @@ body {
   margin: 10px;
 }
 
+.clearButton {
+}
+
 #inputExcluded,
-#inputExcluded2,
+#inputIncluded,
 #inputExcluded3,
 #inputExcluded4 {
   margin: 10px;
-  width: 250px;
+  width: 350px;
   height: 30px;
 }
