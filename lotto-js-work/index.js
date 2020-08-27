@@ -1,7 +1,9 @@
 const startButton = document.querySelector(".startButton");
-const clearButton = document.querySelector(".clearButton");
+const ClearButton = document.querySelector(".clearButton");
 
 function handerButton() {
+  const restartMessage = document.querySelector("#restartMessage");
+  restartMessage.textContent = null;
   const candidate = Array(45)
     .fill()
     .map((Airball, i) => i + 1);
@@ -16,8 +18,6 @@ function handerButton() {
     }
   }
 
-  // console.log(candidate);
-
   const shuffle = [];
   while (candidate.length > 0) {
     const random = Math.floor(Math.random() * candidate.length);
@@ -30,9 +30,16 @@ function handerButton() {
   const inc = document.querySelector("#inputIncluded").value;
   incArr = inc.split(",");
 
-  for (z = 0; z < incArr.length; z++) {
-    if (shuffle.splice(z, 1, incArr[z]));
+  console.log(incArr.length);
+
+  if (6 < incArr.length) {
+    incArr = null;
+  } else {
+    for (z = 0; z < incArr.length; z++) {
+      if (shuffle.splice(z, 1, incArr[z]));
+    }
   }
+
   const winBalls = shuffle.slice(0, 6).sort((p, c) => p - c);
   // sort()는 단순 숫자 순서가 아닌 사전순(07이 아닌 7을 나중으로 볼수가 있다).
   const bonus = shuffle[6];
@@ -87,18 +94,20 @@ function handerButton() {
   setTimeout(() => {
     const bonusMessage2 = document.createElement("div");
     const bonusMessage1 = document.createElement("i");
-    bonusMessage1.className = "fas fa-redo-alt";
-    bonusMessage1.textContent = `버튼을 누르세요.`;
+    // bonusMessage1.className = "fas fa-redo-alt";
+    bonusMessage1.textContent = `추첨버튼을 누르세요.`;
     bonusMessage2.textContent = `다시 추첨할려면 `;
     MessageTag.appendChild(bonusMessage1);
     MessageTag.appendChild(bonusMessage2);
   }, 7500);
 }
 
-// CLEARButton(() => {
-//   null = bonusMessage1.textContent;
-//   null = bonusMessage2.textContent;
-// }
+ClearButton.addEventListener("click", () => {
+  const result = document.querySelector("#result");
+  const BONUS = document.querySelector(".bonus");
+  result.textContent = null;
+  BONUS.textContent = null;
+});
 
 function init() {
   startButton.addEventListener("click", handerButton);
