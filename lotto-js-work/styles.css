@@ -13,6 +13,7 @@ body {
 }
 
 #result {
+  width: 400px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -27,9 +28,11 @@ body {
   font-size: 20px;
   text-align: center;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .bonus {
+  width: 400px;
   margin-top: 10px;
 }
 
