@@ -25,6 +25,7 @@ let answer = [];
 
 for (let n = 0; n <= 3; n += 1) {
   const index = Math.floor(Math.random() * numbers.length);
+  console.log(answer);
   answer.push(numbers[index]);
   numbers.splice(index, 1);
 }
