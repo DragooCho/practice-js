@@ -117,7 +117,3 @@ check.addEventListener("click", () => {
 // for (let n = 4; n >= -4; n -= 2) {
 //   console.log(" ".repeat(Math.abs(n)) + "*".repeat(9 - Math.abs(2 * n)));
 // }
-
-// for (let n = 4; n >= -4; n -= 2) {
-//   console.log(" ".repeat(Math.abs(n)) + "*".repeat(3 - Math.abs(n)));
-// }
