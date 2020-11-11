@@ -1,5 +1,5 @@
 const startButton = document.querySelector(".startButton");
-const ClearButton = document.querySelector(".clearButton");
+const clearButton = document.querySelector(".clearButton");
 
 function handerButton() {
   const restartMessage = document.querySelector("#restartMessage");
@@ -102,7 +102,7 @@ function handerButton() {
   }, 7500);
 }
 
-ClearButton.addEventListener("click", () => {
+clearButton.addEventListener("click", () => {
   const result = document.querySelector("#result");
   const BONUS = document.querySelector(".bonus");
   result.textContent = null;
