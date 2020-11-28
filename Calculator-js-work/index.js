@@ -51,7 +51,6 @@ resetBtn.addEventListener("click", () => {
 });
 
 resultBtn.addEventListener("click", () => {
-  console.log(TEMP, operator, numberInput.value);
   if (operator) {
     if (numberInput.value) {
       if (operator === "+") {
