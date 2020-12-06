@@ -5,31 +5,32 @@ const division = document.querySelector("#division");
 const resetBtn = document.querySelector(".resetButton");
 const resultBtn = document.querySelector(".resultBtn-click");
 const numberInput = document.querySelector("#calculatorInput");
+const targetBtn = document.querySelector(".tenNumberBox");
 
 let countNumber;
 let operator;
 let deleteEndCreate = true;
 
-const inputNum = (n) => {
+targetBtn.addEventListener("click", (e) => {
   if (deleteEndCreate === true) {
     numberInput.value = null;
-    numberInput.value += n;
+    numberInput.value = numberInput.value + e.target.value;
     deleteEndCreate = false;
   } else {
-    numberInput.value += n;
+    numberInput.value = numberInput.value + e.target.value;
   }
-};
+});
 
 function pickupOperator() {
   if (operator) {
     if (operator === "+") {
-      countNumber += Number(numberInput.value);
+      countNumber = countNumber + Number(numberInput.value);
     } else if (operator === "-") {
-      countNumber -= Number(numberInput.value);
+      countNumber = countNumber - Number(numberInput.value);
     } else if (operator === "*") {
-      countNumber *= Number(numberInput.value);
+      countNumber = countNumber * Number(numberInput.value);
     } else if (operator === "/") {
-      countNumber /= Number(numberInput.value);
+      countNumber = countNumber / Number(numberInput.value);
     }
     numberInput.value = countNumber;
   } else {
@@ -76,29 +77,30 @@ resetBtn.addEventListener("click", () => {
   deleteEndCreate = true;
 });
 
-resultBtn.addEventListener("click", () => {
-  resultCalculator();
-});
-
 function resultCalculator() {
   if (operator) {
     if (numberInput.value) {
       if (operator === "+") {
-        numberInput.value += Number(numberInput.value);
+        countNumber = countNumber + Number(numberInput.value);
       } else if (operator === "-") {
-        numberInput.value -= Number(numberInput.value);
+        countNumber = countNumber - Number(numberInput.value);
       } else if (operator === "*") {
-        numberInput.value *= Number(numberInput.value);
+        countNumber = countNumber * Number(numberInput.value);
       } else if (operator === "/") {
-        numberInput.value /= Number(numberInput.value);
+        countNumber = countNumber / Number(numberInput.value);
       }
+      numberInput.value = countNumber;
     }
   } else {
     if (numberInput.value) {
       numberInput.value = countNumber;
     }
   }
+  deleteEndCreate = true;
   operator = null;
   countNumber = null;
-  deleteEndCreate = true;
 }
+
+resultBtn.addEventListener("click", () => {
+  resultCalculator();
+});

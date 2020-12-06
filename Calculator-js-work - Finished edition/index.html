@@ -7,7 +7,7 @@
       src="https://kit.fontawesome.com/b5f59d1228.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
     <title>Calculator</title>
   </head>
   <body>
@@ -19,25 +19,27 @@
               type="number"
               placeholder="  Lively coding"
           />
-          <button class="resetButton">c</button>
-          <button onclick="inputNum(9)">9</button>
-          <button onclick="inputNum(8)">8</button>
-          <button onclick="inputNum(7)">7</button>
-          <button onclick="inputNum(6)">6</button>
-          <button onclick="inputNum(5)">5</button>
-          <button onclick="inputNum(4)">4</button>
-          <button onclick="inputNum(3)">3</button>
-          <button onclick="inputNum(2)">2</button>
-          <button onclick="inputNum(1)">1</button>
-          <button onclick="inputNum(0)">0</button>
+          <div class="tenNumberBox">
+            <button value="9" id="getValue">9</button>
+            <button value="8" id="getValue">8</button>
+            <button value="7" id="getValue">7</button>
+            <button value="6" id="getValue">6</button>
+            <button value="5" id="getValue">5</button>
+            <button value="4" id="getValue">4</button>
+            <button value="3" id="getValue">3</button>
+            <button value="2" id="getValue">2</button>
+            <button value="1" id="getValue">1</button>
+            <button value="0" id="getValue" class="zero">0</button>
+          </div>
           <button id="plus">+</button>
           <button id="minus">-</button>
+          <button class="resetButton">c</button>
           <button id="multiply">×</button>
           <button id="division">÷</button>
           <button class="resultBtn-click">=</button>
         </div>
       </section>
     </div>
-    <script src="index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
